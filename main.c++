@@ -4,6 +4,8 @@
 #include "Block.h"
 #include "PCScreen.h"
 #include "Desk.h"
+#include "Cylinder.h"
+#include "LampShade.h"
 
 void createScene(ExtendedController& c, ShaderIF* sIF)
 {
