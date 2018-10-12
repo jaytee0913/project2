@@ -36,7 +36,7 @@ vec4 evaluateLightingModel()
 	// the simplified Phong model we are using for project 2.
 
 	// For now:
-	return vec4(0.0, 0.0, 0.0, 1.0);
+	return vec4(0.0, 0.0, 0.0, 1.0); // change this for color changes
 }
 
 void main ()

@@ -7,7 +7,7 @@ LOCAL_UTIL_LIBRARIES = ../lib/libcryph.so ../lib/libfont.so ../lib/libglsl.so ..
 GL_LIB_LOC = -L/usr/lib/nvidia-375
 GL_LIBRARIES = $(GL_LIB_LOC) -lglfw -lGLU -lGL
 
-OBJS = main.o ExtendedController.o TEMPLATE_Subclass.o
+OBJS = main.o ExtendedController.o Block.o PCScreen.o Desk.o
 
 main: $(OBJS) $(LOCAL_UTIL_LIBRARIES)
 	$(LINK) -o main $(OBJS) $(LOCAL_UTIL_LIBRARIES) $(GL_LIBRARIES)
@@ -31,5 +31,12 @@ main.o: main.c++
 	$(CPP) $(C_FLAGS) main.c++
 ExtendedController.o: ExtendedController.c++
 	$(CPP) $(C_FLAGS) ExtendedController.c++
-TEMPLATE_Subclass.o: TEMPLATE_Subclass.h TEMPLATE_Subclass.c++
-	$(CPP) $(C_FLAGS) TEMPLATE_Subclass.c++
+Block.o: Block.h Block.c++
+	$(CPP) $(C_FLAGS) Block.c++
+PCScreen.o: PCScreen.h PCScreen.c++
+	$(CPP) $(C_FLAGS) PCScreen.c++
+Desk.o: Desk.h Desk.c++
+	$(CPP) $(C_FLAGS) Desk.c++
+
+clean:
+	rm *.o main
